@@ -1,16 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
 </head>
+
 <body>
-    <h1>Home Page</h1>
+    <div id="app">
+        <input type="text" id="room" />
+        <button id="btn">Create Room</button>
+        <div class="left">
+            <h3>List room</h3>
+            <ul id="rooms">
+            </ul>
+        </div>
+
+        <div class="right">
+            <h3 id="current-room">...</h3>
+            <div class="listMsg">
+            </div>
+            <div id="notification"></div>
+            <input type="text" id="chatMsg">
+            <button id="btnSend">Send</button>
+        </div>
+    </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="../javascript/index.js">
-        
-    </script>
+    <script src="../javascript/index.js"></script>
+    <style>
+        body {
+            background-color: rgba(128, 128, 128, 0.381);
+        }
+
+        #app {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        input {
+            padding: 8px 10px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 3px;
+            width: 300px;
+        }
+
+        button {
+            padding: 8px 0px;
+            outline: none;
+            border: 1px solid gray;
+            border-radius: 3px;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .left {
+            width: 20%;
+            float: left;
+            margin-top: 20px;
+        }
+
+        .right {
+            float: right;
+            margin-top: 20px;
+
+        }
+
+        .listMsg {
+            margin-bottom: 10px;
+            height: 200px;
+            padding-left: 10px;
+            /* background-color: white; */
+            background: #ebeef4;
+        }
+
+        .msgMe {
+            font-size: 16px;
+            position: relative;
+            width: 30%;
+            color: white;
+            line-height: 15px;
+            background-color: rgb(0, 132, 255);
+            border-radius: 10px;
+            padding: 10px 10px;
+            margin: 10px 0;
+            left: 64%;
+        }
+
+        .msg {
+            font-size: 16px;
+            color: black;
+            line-height: 15px;
+            background-color: #E4E6EB;
+            border-radius: 3px;
+            padding: 10px 10px;
+            width: 30%;
+            float: left;
+        }
+
+        .msgUserOther {
+            font-size: 12px;
+            color: gray;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
 </body>
+
 </html>
